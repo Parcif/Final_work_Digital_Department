@@ -1,0 +1,72 @@
+<!-- Форма для добавления объектов -->
+<div class="subwoofer-form-container">
+    <form [formGroup]="subwooferForm" (ngSubmit)="onSubmit()">
+  
+      <div class="form-row">
+        <label for="type">Модель</label>
+        <input type="text" formControlName="name" id="name" required>
+      </div>
+  
+      <div class="form-row">
+        <label for="priority">Бренд</label>
+        <input type="text" formControlName="manufacturer" id="manufacturer">
+      </div>
+  
+      <div class="form-row">
+        <label for="status">Сопротивление (Ом)</label>
+        <input type="text" formControlName="resistance" id="resistance" required>
+      </div>
+  
+      <div class="form-row">
+        <label for="title">Номинальная мощность (Вт)</label>
+        <input type="number" formControlName="nominalPower" id="nominalPower" required>
+      </div>
+  
+      <div class="form-row">
+        <label for="description">Цена (Руб)</label>
+        <input type="number" formControlName="price" id="price">
+      </div>
+  
+      <div class="form-actions">
+        <button type="submit" class="submit-button">Добавить сабвуфер</button>
+      </div>
+  
+    </form>
+</div>
+  
+  
+  <!-- Таблица объектов -->
+  <div class="subwoofer-table-container">
+    <table class="subwoofer-table">
+  
+      <thead>
+        <tr>
+          <th>Артикул</th>
+          <th>Модель</th>
+          <th>Бренд</th>
+          <th>Сопротивление (Ом)</th>
+          <th>Номинальная мощность (Вт)</th>
+          <th>Цена (Руб)</th>
+          <th>Управление</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let subwoofer of subwoofers">
+          <td>{{ subwoofer.id }}</td>
+          <td>{{ subwoofer.name }}</td>
+          <td>{{ subwoofer.manufacturer }}</td>
+          <td>{{ subwoofer.resistance }}</td>
+          <td>{{ subwoofer.nominalPower }}</td>
+          <td>{{ subwoofer.price }}</td>
+  
+          <td>
+            <button (click)="onEdit(subwoofer)">Редактировать</button>
+            <button (click)="onDelete(subwoofer.id)">Удалить</button>
+          </td>
+  
+        </tr>
+      </tbody>
+  
+    </table>
+  </div>

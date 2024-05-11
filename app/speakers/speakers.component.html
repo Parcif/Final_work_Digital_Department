@@ -1,0 +1,72 @@
+<!-- Форма для добавления объектов -->
+<div class="task-form-container">
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-row">
+      <label for="type">Модель</label>
+      <input type="text" formControlName="name" id="name" required>
+    </div>
+
+    <div class="form-row">
+      <label for="priority">Бренд</label>
+      <input type="text" formControlName="manufacturer" id="manufacturer">
+    </div>
+
+    <div class="form-row">
+      <label for="status">Диаметр (См)</label>
+      <input type="number" formControlName="sizeInCm" id="sizeInCm" required>
+    </div>
+
+    <div class="form-row">
+      <label for="title">Номинальная мощность (Вт)</label>
+      <input type="number" formControlName="nominalPower" id="nominalPower" required>
+    </div>
+
+    <div class="form-row">
+      <label for="description">Цена (Руб)</label>
+      <input type="number" formControlName="price" id="price">
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="submit-button">Добавить динамик</button>
+    </div>
+
+  </form>
+</div>
+
+
+<!-- Таблица объектов -->
+<div class="task-table-container">
+  <table class="task-table">
+
+    <thead>
+      <tr>
+        <th>Артикул</th>
+        <th>Модель</th>
+        <th>Бренд</th>
+        <th>Диаметр (См)</th>
+        <th>Номинальная мощность (Вт)</th>
+        <th>Цена (Руб)</th>
+        <th>Управление</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.id }}</td>
+        <td>{{ task.name }}</td>
+        <td>{{ task.manufacturer }}</td>
+        <td>{{ task.sizeInCm }}</td>
+        <td>{{ task.nominalPower }}</td>
+        <td>{{ task.price }}</td>
+
+        <td>
+          <button (click)="onEdit(task)">Редактировать</button>
+          <button (click)="onDelete(task.id)">Удалить</button>
+        </td>
+
+      </tr>
+    </tbody>
+
+  </table>
+</div>

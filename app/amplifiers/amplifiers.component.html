@@ -1,0 +1,80 @@
+<!-- Форма для добавления объектов -->
+<div class="amplifier-form-container">
+    <form [formGroup]="amplifierForm" (ngSubmit)="onSubmit()">
+  
+      <div class="form-row">
+        <label for="name">Модель</label>
+        <input type="text" formControlName="name" id="name" required>
+      </div>
+  
+      <div class="form-row">
+        <label for="manufacturer">Бренд</label>
+        <input type="text" formControlName="manufacturer" id="manufacturer" required>
+      </div>
+  
+      <div class="form-row">
+        <label for="minResistance">Минимальное сопротивление (Ом)</label>
+        <input type="number" formControlName="minResistance" id="minResistance" required>
+      </div>
+  
+      <div class="form-row">
+        <label for="numberOfChannels">Количество каналов</label>
+        <input type="number" formControlName="numberOfChannels" id="numberOfChannels" required>
+      </div>
+
+      <div class="form-row">
+        <label for="maximumPower">Максимальная мощность (Вт)</label>
+        <input type="number" formControlName="maximumPower" id="maximumPower" required>
+      </div>
+  
+      <div class="form-row">
+        <label for="price">Цена (Руб)</label>
+        <input type="number" formControlName="price" id="price" required>
+      </div>
+  
+      <div class="form-actions">
+        <button type="submit" class="submit-button">Добавить усилитель</button>
+      </div>
+  
+    </form>
+</div>
+
+
+  <!-- Таблица объектов -->
+  <div class="amplifier-table-container">
+    <table class="amplifier-table">
+  
+      <thead>
+        <tr>
+          <th>Артикул</th>
+          <th>Модель</th>
+          <th>Бренд</th>
+          <th>Минимальное сопротивление (Ом)</th>
+          <th>Количество каналов</th>
+          <th>Максимальная мощность (Вт)</th>
+          <th>Цена (Руб)</th>
+          <th>Управление</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let amplifier of amplifiers">
+          <td>{{ amplifier.id }}</td>
+          <td>{{ amplifier.name }}</td>
+          <td>{{ amplifier.manufacturer }}</td>
+          <td>{{ amplifier.minResistance }}</td>
+          <td>{{ amplifier.numberOfChannels }}</td>
+          <td>{{ amplifier.maximumPower }}</td>
+          <td>{{ amplifier.price }}</td>
+  
+          <td>
+            <button (click)="onEdit(amplifier)">Редактировать</button>
+            <button (click)="onDelete(amplifier.id)">Удалить</button>
+          </td>
+  
+        </tr>
+      </tbody>
+  
+    </table>
+  </div>
+  

@@ -1,0 +1,93 @@
+.amplifier-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+  }
+  
+  .form-row {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  
+  .form-row label {
+    width: 200px;
+    margin-right: 10px;
+    text-align: right;
+  }
+  
+  .form-row input[type="text"],
+  .form-row input[type="number"]
+  {
+    flex: 1;
+    padding: 8px;
+    background-color: #62a4e6;
+    border: 1px solid #000000;
+    border-radius: 4px;
+  }
+  
+  .form-actions {
+    text-align: center;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #333;
+  }
+
+  
+/* Таблица объектов */
+.amplifier-table-container {
+    margin-top: 20px;
+  }
+  
+  .amplifier-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .amplifier-table th,
+  .amplifier-table td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .amplifier-table th {
+    color: white;
+    background-color: #333;
+  }
+  
+  .amplifier-table tr:nth-child(even) {
+    background-color: #26ddd165;
+  }
+  
+  .amplifier-table tr:hover {
+    color: white;
+    background-color: #0000006f;
+  }
+  
+  .amplifier-table button {
+    background-color: #007bff;
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .amplifier-table button:hover {
+    color: white;
+    background-color: #333;
+    opacity: 0.8;
+  }
